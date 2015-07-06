@@ -130,6 +130,7 @@ If you  access the form structure directly from the PolyModel object, that is fi
 
 ## To Do ##
 
+ - Support models that are placed under a conditional helper statement. These are currently not being picked up when the template is being scanned. Pretty big show stopper.
  - hide PolyForm config like 'trigger' under prototype, without getting the dependency tracker error
  - support more polymer elements
  - support polymer 0.5 and 1.0

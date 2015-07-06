@@ -1,8 +1,8 @@
 Package.describe({
   name: 'leblanc:polymodel',
-  version: '0.0.1',
+  version: '0.0.2',
   // Brief, one-line summary of the package.
-  summary: 'PolyModel is a package that simulates the ng-model principal of Angular for Polymer elements and regular HTML5 elements with Meteor Blaze.',
+  summary: 'Simulates the ng-model principal of Angular for Polymer and  HTML5 elements.',
   // URL to the Git repository containing the source code for this package.
   git: 'https://github.com/mattiLeBlanc/polymodel',
   // By default, Meteor will default to using README.md for documentation.
