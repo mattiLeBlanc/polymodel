@@ -134,3 +134,10 @@ If you  access the form structure directly from the PolyModel object, that is fi
  - hide PolyForm config like 'trigger' under prototype, without getting the dependency tracker error
  - support more polymer elements
  - support polymer 0.5 and 1.0
+ - only display model fields in the current TRUE condition block
+
+## Changelog ##
+
+0.0.3: 	29/7/2015
+Updated the deepSearch function that scans the templates for data-model attributes, for it to scan within IF ELSE conditions in the template. Currently only IF and one ELSE is supported (not sure if blaze supports else-ifs, haven't looked it up).
+Currently the polymodel will display all the model fields in the IF and ELSE block in one model.

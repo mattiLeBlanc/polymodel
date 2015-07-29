@@ -21,6 +21,7 @@ class PolyModel
 
     # retrieve model attributes (data-model) from the Blaze template
     # self.elements =
+    # debugger
     self.setRootProtoValue( 'elements', self.deepSearch( template.view.templateInstance().view._render() ) )
 
 
@@ -71,7 +72,7 @@ class PolyModel
             self[ primary ]     = varObject
             template[ primary ] = new ReactiveVar varObject
 
-    if args.created and _.isFunction args.created
+    if args and args.created and _.isFunction args.created
       args.created.apply( this )
 
   ###
@@ -241,6 +242,15 @@ class PolyModel
               # Lookup is a Spacebar evaluation. Skip this
               if obj.name.match( /^lookup/ )
                 return modelFields
+              # when we find an IF statement we have to execute 2 searches: one for a TRUE condition and one for a false
+              # NOTE: currently supporting IF ELSE only
+              else if obj.name is 'if'
+                #true condition
+                obj.__conditionVar.set( true )
+                elements = obj._render()
+                obj.__conditionVar.set( false )
+                elements = elements.concat obj._render()
+                return self.deepSearch( elements, modelFields )
               # assume there is a _render function
               else
                 elements = obj._render()
