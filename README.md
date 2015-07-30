@@ -141,3 +141,6 @@ If you  access the form structure directly from the PolyModel object, that is fi
 0.0.3: 	29/7/2015
 Updated the deepSearch function that scans the templates for data-model attributes, for it to scan within IF ELSE conditions in the template. Currently only IF and one ELSE is supported (not sure if blaze supports else-ifs, haven't looked it up).
 Currently the polymodel will display all the model fields in the IF and ELSE block in one model.
+
+0.0.4:  31/7/2015
+Bug fix in model deepSearch function

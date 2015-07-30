@@ -247,9 +247,18 @@ class PolyModel
               else if obj.name is 'if'
                 #true condition
                 obj.__conditionVar.set( true )
-                elements = obj._render()
+                trueElements = obj._render()
+
+                if !(trueElements instanceof Array)
+                  trueElements = [ trueElements ]
+
                 obj.__conditionVar.set( false )
-                elements = elements.concat obj._render()
+                falseElements = obj._render()
+
+                if !(falseElements instanceof Array)
+                  falseElements = [ falseElements ]
+
+                elements = trueElements.concat falseElements
                 return self.deepSearch( elements, modelFields )
               # assume there is a _render function
               else
